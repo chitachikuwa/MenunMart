@@ -1,0 +1,120 @@
+[33mcommit a3ca826d9e82f843ff30da263c15415f3ff2cc27[m[33m ([m[1;36mHEAD -> [m[1;32mユーザー用管理機能[m[33m, [m[1;31morigin/ユーザー用管理機能[m[33m)[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Mon Nov 27 21:34:06 2023 +0900
+
+    管理者用ログイン機能
+
+[33mcommit 3b9c4a4080ecade3ab3cd2b95c1fb22589667aba[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Fri Nov 24 23:20:00 2023 +0900
+
+    管理者用ログイン画面　作成
+
+[33mcommit 2421b6d160f694116d75a0355f6d1069c5fb5a82[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Fri Nov 24 02:27:54 2023 +0900
+
+    Update Gemfile.lock
+
+[33mcommit 3618037048bf387e105312cc638595bdd8bc28b8[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Fri Nov 24 02:13:14 2023 +0900
+
+    Routing 作成
+
+[33mcommit 116edacf51be103258ec29aac2546cd3b21113b2[m
+Merge: 2711c0e 5b6a03f
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Sun Nov 19 02:11:48 2023 +0900
+
+    Merge branch 'master' into ユーザー用管理機能
+
+[33mcommit 2711c0e6dd1b1d5b535cf0b62bf1098b11cf84c5[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Sun Nov 19 02:05:19 2023 +0900
+
+    ログインの有無機能
+
+[33mcommit 5b6a03f276894a9dc450d7f64770a74d674ec5a2[m
+Merge: 083caa3 d260481
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Sun Nov 19 01:47:10 2023 +0900
+
+    Merge pull request #2 from chitachikuwa/ユーザー用管理機能
+    
+    ストロングパラメーター設定
+
+[33mcommit d26048190cd3a99d7de38bc71c12ef14260cf3c1[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Sun Nov 19 01:46:47 2023 +0900
+
+    ストロングパラメーター設定
+
+[33mcommit 083caa3847ae914be03e3b61ca9f623c864b4b20[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Sun Nov 19 01:32:13 2023 +0900
+
+    ユーザー登録ボタン追加
+
+[33mcommit 8777967b9e4c23ef8caa94578beaae27fe7bfb1a[m[33m ([m[1;31morigin/管理者用管理機能[m[33m, [m[1;32m管理者用管理機能[m[33m)[m
+Merge: 78cd6d3 08fe7c8
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Sun Nov 19 01:24:25 2023 +0900
+
+    Merge pull request #1 from chitachikuwa/ユーザー用管理機能
+    
+    ユーザー用管理機能
+
+[33mcommit 08fe7c8eb85c648c701e13fdd83d70bf8ee3da72[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Sun Nov 19 01:22:27 2023 +0900
+
+    user モデルの単体テスト
+
+[33mcommit e30230ed98520eb83a918ee27defa44015e33812[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Fri Nov 17 01:19:04 2023 +0900
+
+    バリデーション設定
+
+[33mcommit c111092d5ae19029fa7ecf6c312db750a8eb10ec[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Fri Nov 17 00:41:17 2023 +0900
+
+    ログイン画面作成
+
+[33mcommit 65f713ce82cf56a8c4fc9788a66644ae4fe7dea0[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Fri Nov 17 00:38:19 2023 +0900
+
+    日本語化
+
+[33mcommit b4d4b071627abbfa018dc9ae9456556cecc66055[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Fri Nov 17 00:29:14 2023 +0900
+
+    新規登録画面
+
+[33mcommit 78cd6d37c7bbaef64acec4656ce5b8bb7e95d910[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Fri Nov 17 00:24:25 2023 +0900
+
+    devise 導入②
+
+[33mcommit 3d6f9f736ed8eb7b211d6cf8fc019ba6ae7bc977[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Fri Nov 17 00:02:30 2023 +0900
+
+    devise　導入
+
+[33mcommit d430db5aff7bf7977012980121e14711e7fc5dcb[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Thu Nov 16 23:39:04 2023 +0900
+
+    Render 本番環境準備
+
+[33mcommit 9a2dbf922dd13a190cc934681ef582c37f81dc93[m
+Author: chitachikuwa <136873298+chitachikuwa@users.noreply.github.com>
+Date:   Thu Nov 16 23:26:34 2023 +0900
+
+    first commit
