@@ -1,12 +1,1 @@
-<h1>Recipes#index</h1>
-
-
-<% if user_signed_in? || admin_signed_in? %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
-    <%= link_to "ログイン", new_user_session_path, class: "sign-up" %>
-    <%= link_to "管理者ログイン", admin_session_path %>
-<% end %> 
-
-
+<%= render "shared/header" %>

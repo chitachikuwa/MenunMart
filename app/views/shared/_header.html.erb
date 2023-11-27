@@ -1,0 +1,16 @@
+<div class='header-main'>
+  <div class='header-title'>
+     メニューマート
+  <div>
+
+ <% if user_signed_in? || admin_signed_in? %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% if admin_signed_in? %>
+      <%= link_to "レシピ投稿", new_recipe_path, method: :get %>
+    <% end %>
+  <% else %>
+    <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+    <%= link_to "ログイン", new_user_session_path, class: "sign-up" %>
+    <%= link_to "管理者ログイン", admin_session_path %>
+  <% end %> 
+</div>

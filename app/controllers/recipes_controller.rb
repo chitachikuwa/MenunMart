@@ -9,18 +9,18 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    if admin_sigend_in?
-      @recipe.admin_in = current_admin.in
+    if admin_signed_in?
+      @recipe.admin_id = current_admin.id
     end
     if @recipe.save
       redirect_to root_path
     else
       render :new
     end
-  end    
+  end     
 
   private
   def recipe_params
-    params.require(:recipe).permit(:image, :title, :category_id, :ingredients, :steps)   
+    params.require(:recipe).permit(:image, :title, :category_id, :ingredients, :seasonings,:steps)   
   end  
 end
