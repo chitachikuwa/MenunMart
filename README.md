@@ -1,24 +1,82 @@
-# README
+## アプリケーション名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RecipeEase
 
-Things you may want to cover:
 
-* Ruby version
+## アプリケーション概要
 
-* System dependencies
+レシピ検索、献立管理ができ材料をネットスーパーで購入ができる。
 
-* Configuration
 
-* Database creation
+## URL
 
-* Database initialization
+https://recipeease.onrender.com
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## テスト用アカウント
 
-* Deployment instructions
 
-* ...
+・管理者用アドレス：recipe@ease<br>
+・管理者用パスワード: recipe111<br>
+
+
+## 利用方法
+
+### 管理者レシピ投稿
+1.管理者用ログインページよりログインする<br>
+2.レシピ作成ボタンを押し、料理画像、料理名、カテゴリー、食材、調味料、作り方を入力し、作成ボタンを押す<br>
+
+### ユーザ用献立管理・材料購入
+1.カレンダーで日付選択（最大１週間分）し献立作成ボタンを押す<br>
+2.作成された献立から購入したい食材を選択<br>
+3.郵便番号、住所、電話番号を入力し購入ボタンを押す<br>
+
+
+## アプリケーションを作成した背景
+現在、子育て中で小さい子どもと一緒に買い物に行く際いつもゆっくり買い物することが難しい時が多いこと。<br>
+買い物に行く際、自転車での買い物になり天気に左右されたり、購入する量が限られるため買い物を頻繁に行く事が不便に感じたこと。<br>毎日献立を考えるのが大変に感じ少しでも家事の負担を減らしたいと思ったのがきっかけ。
+
+
+## 洗い出した要件
+https://docs.google.com/spreadsheets/d/1HfvWpiswBDvUAteMjpsTIp8Y1Ik5crIsWTOh2_MBFJ0/edit#gid=982722306
+
+
+## 実装した機能
+・管理者用ログイン（設定したアドレス・パスワードのみログインが可能）<br>
+・ユーザ用新規登録、ログイン、エラーメッセージの日本語化<br>
+・レシピ作成機能<br>
+
+
+## 実装予定の機能
+
+・カレンダーで日付選択し自動で献立作成<br>
+・食材購入機能<br>
+・レシピ検索機能<br>
+・マイページ作成
+
+
+## データベース設計
+[![Image from Gyazo](https://i.gyazo.com/5604b58c3176cec854a0a0c54f931c57.png)](https://gyazo.com/5604b58c3176cec854a0a0c54f931c57)
+
+
+
+## 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/99a689901845d05a960525613d02e0ff.png)](https://gyazo.com/99a689901845d05a960525613d02e0ff)
+
+
+## 開発環境
+・Ruby on Rails<br>
+・MySQ<br>
+・GitHub<br>
+・render<br>
+
+
+
+## ローカルでの動作方法
+
+
+## 工夫した点
+・ユーザが新規登録・ログインする際、不備があった際、わかりやすいよう日本語化
+
+
+
