@@ -6,3 +6,11 @@ ja:
        first_name : 名前
        kana_last_name : 姓（カナ）
        kana_first_name : 名前（カナ）
+      recipe:
+       image : 料理画像
+       title : 料理名
+       ingredients : 食材
+       seasonings : 調味料
+       steps : 作り方
+       category_id : 分類
+      
