@@ -3,29 +3,34 @@
 <%# レシピ詳細表示 %>
  <div class='recipe-show'>
    <div class='recipe-box'>
-     <h2 class='name'>
-       <%= @recipe.title %>
-     </h2>  
-     
      <div class='recipe-img-content'>
       <%= image_tag @recipe.image, class:'recipe-box-img' %>
      </div>
-
-     <div class='recipe-category-content'>
-      <%= Category.find(@recipe.category_id).name%> 
-     </div>
-
-     <div class='recipe-'>
-      <%= @recipe.ingredients%>
+     <div class='datail-table'>
+       <div class='datail-title'>
+         <%= @recipe.title %>
+        </div> 
+       <div class='datail-name'>
+         材料
+       </div>
+       <div class='datail-item'>
+         <%= @recipe.ingredients%>
+       </div> 
+       <div class='datail-name'>
+        調味料
+       </div> 
+       <div class='datail-item'>
+         <%= @recipe.seasonings%>
+       </div>
+       <div class='datail-name'> 
+         作り方
+       </div>
+       <div class='datail-item'>
+         <%= @recipe.steps%> 
+       </div> 
      </div> 
-
-     <div>
-      <%= @recipe.seasonings%>
-     </div>
-
-     <div>
-      <%= @recipe.steps%> 
-     </div> 
+   </div>
+ </div>    
 
 
 
