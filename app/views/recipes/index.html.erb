@@ -5,7 +5,7 @@
    <ul class='recipe-lists'>
      <% @recipes.each do |recipe| %>
        <li class='-recipe-list'>
-         <%= link_to recipes_path(recipe) do %>
+         <%= link_to recipe_path(recipe.id) do %>
            <div class='recipe-img-content'>
              <%= image_tag recipe.image, class: "recipe-img"%>
            </div>
@@ -13,8 +13,8 @@
              <div class='recipe-title'>
                <%= recipe.title %>
              </div>
-            <% end %> 
-           </div>   
+           </div> 
+          <% end %>    
         </li>    
      <% end %>
    </ul>

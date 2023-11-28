@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions'
    }
   root 'recipes#index'
-  resources :recipes, only: [:index, :new, :create ]
+  resources :recipes, only: [:index, :new, :create, :show ]
 end

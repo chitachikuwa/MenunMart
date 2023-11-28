@@ -1,0 +1,31 @@
+<%= render "shared/header" %>
+
+<%# レシピ詳細表示 %>
+ <div class='recipe-show'>
+   <div class='recipe-box'>
+     <h2 class='name'>
+       <%= @recipe.title %>
+     </h2>  
+     
+     <div class='recipe-img-content'>
+      <%= image_tag @recipe.image, class:'recipe-box-img' %>
+     </div>
+
+     <div class='recipe-category-content'>
+      <%= Category.find(@recipe.category_id).name%> 
+     </div>
+
+     <div class='recipe-'>
+      <%= @recipe.ingredients%>
+     </div> 
+
+     <div>
+      <%= @recipe.seasonings%>
+     </div>
+
+     <div>
+      <%= @recipe.steps%> 
+     </div> 
+
+
+
