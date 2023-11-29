@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+
+<%# レシピ詳細表示 %>
+ <div class='recipe-show'>
+   <div class='recipe-box'>
+     <div class='recipe-img-content'>
+      <%= image_tag @recipe.image, class:'recipe-box-img' %>
+     </div>
+     <div class='datail-table'>
+       <div class='datail-title'>
+         <%= @recipe.title %>
+        </div> 
+       <div class='datail-ingredients'>
+         材料
+       </div>
+       <div class='datail-item'>
+         <%= @recipe.ingredients%>
+       </div> 
+       <div class='datail-seasonings'>
+        【調味料】
+       </div> 
+       <div class='datail-item'>
+         <%= @recipe.seasonings%>
+       </div>
+       <div class='datail-steps'> 
+         作り方
+       </div>
+       <div class='datail-item'>
+         <%= @recipe.steps%> 
+       </div> 
+     </div> 
+   </div>
+ </div>    
+
+
+
