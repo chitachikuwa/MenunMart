@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :check_admin, only: [:new, :edit, :update]
+  
+  #before_action :admin_scan, only: [:edit]
   before_action :set_recipe, only: [:show, :edit, :update]
   def index
     @recipes = Recipe.all
@@ -11,8 +12,8 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    if admin_signed_in?
-      @recipe.admin_id = current_admin.id
+    if current_user&.admin?
+      @recipe.admin_id = current_user.id
     end
     if @recipe.save
       redirect_to root_path
@@ -22,6 +23,7 @@ class RecipesController < ApplicationController
   end     
 
   def show
+    @recipe = Recipe.find(params[:id])
   end
 
   def edit
@@ -36,15 +38,14 @@ class RecipesController < ApplicationController
   end      
 
   private
-
-  def check_admin
-    unless current_admin == @recipe.admin
-      redirect_to root_path
-    end
-  end  
+  #def admin_scan
+    #unless current_user&.admin?
+      #redirect_to root_path
+   #end  
+  #end
 
   def recipe_params
-    params.require(:recipe).permit(:image, :title, :category_id, :ingredients, :seasonings,:steps)   
+    params.require(:recipe).permit(:image, :title, :category_id, :ingredients, :seasonings,:steps, :quantity).merge(admin_id: current_admin.id)  
   end  
 
   def set_recipe

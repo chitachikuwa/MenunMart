@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2023_11_24_104956) do
     t.json "seasonings", null: false
     t.text "steps", null: false
     t.integer "category_id", null: false
+    t.text "quantity"
     t.bigint "admin_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -13,6 +13,9 @@
   flex-direction: column;
   align-items: center;
 }
+.recipe-btn{
+  text-align: left;
+}
 
 .recipe-box-img{
   width: 60vw;

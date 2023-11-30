@@ -1,7 +1,7 @@
 <div class='recipe-new'>
   <div class='recipe-contents'>
     <div class='recipe-new-title'>
-      レシピ作成
+      レシピを編集
     </div>   
     <%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
@@ -35,7 +35,7 @@
      </div>  
 
    <%# 調味料 %>
-      <div class="new-item">
+     <div class="new-item">
         <div class='recipe-new-text'>調味量 </div>
         <div class='new-group'>
           <%= f.text_field :seasonings, class: "seasonings-input" %>
@@ -52,7 +52,7 @@
 
   <%# 作成ボタン %>
     <div class="actions">
-      <%= f.submit "作成する" ,id:"submit-button", class:"recipe-button" %>
+      <%= f.submit "変更する" ,id:"submit-button", class:"recipe-button" %>
       <%= link_to "戻る", recipes_path, class:'back-btn' %> 
     </div>
     <% end %>

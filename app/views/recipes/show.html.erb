@@ -2,7 +2,10 @@
 
 <%# レシピ詳細表示 %>
  <div class='recipe-show'>
-   <div class='recipe-box'>
+   <div class='recipe-box'> 
+     <%if admin_signed_in? %>
+       <%= link_to '編集', edit_recipe_path, method: :get, class: 'recipe-btn' %>
+     <% end %>
      <div class='recipe-img-content'>
       <%= image_tag @recipe.image, class:'recipe-box-img' %>
      </div>

@@ -1,0 +1,78 @@
+.recipe-new{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: lightyellow;
+}
+
+.recipe-new-title{
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.new-items{
+  width: 60vw;
+  background-color:white;
+  padding: 15px;
+}
+
+.recipe-new-text{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.new-item{
+  margin-bottom: 10px;
+}
+
+.title-input{
+  width: 90%;
+  border: none;
+  border-bottom: 1px dashed black;
+}
+
+.new-group{
+  display: flex;
+  align-items:baseline;
+}
+
+.seasonings-input,.ingredients-input{
+  width: 30%;
+  border: none;
+  border-bottom: 1px dashed black;
+  margin-right: 30px;
+}
+
+.quantity-input{
+  width: 15%;
+  border: none;
+  border-bottom: 1px dashed black;
+}
+
+
+.steps-input{
+  width: 90%;
+  border: none;
+  border-bottom: 1px dashed black;
+
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.back-btn,.recipe-button{
+  background-color: lightgrey;
+  border: 2px solid ;
+  font-size: 15px;
+  width: 8vw;
+  text-align: center;
+  margin: 10px;
+
+}
+
