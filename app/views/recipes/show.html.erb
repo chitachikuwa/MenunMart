@@ -2,38 +2,50 @@
 
 <%# レシピ詳細表示 %>
  <div class='recipe-show'>
-   <div class='recipe-box'> 
-     <%if admin_signed_in? %>
-       <%= link_to '編集', edit_recipe_path, method: :get, class: 'recipe-btn' %>
-     <% end %>
-     <div class='recipe-img-content'>
-      <%= image_tag @recipe.image, class:'recipe-box-img' %>
-     </div>
-     <div class='datail-table'>
+   <div class='recipe-contents'>
+     <div class='recipe-box'> 
+      <%# レシピ画像 %>
+      <div class='recipe-img-content'>
+        <%= image_tag @recipe.image, class:'recipe-box-img' %>
+      </div>
+      <div class='datail-table'>
+       <%# 料理名 %>
        <div class='datail-title'>
          <%= @recipe.title %>
-        </div> 
+         <%if admin_signed_in? %>
+           <%= link_to '編集する', edit_recipe_path, method: :get, class: 'show-btn' %>
+         <% end %>
+       </div> 
+       <%# 材料詳細 %>
        <div class='datail-ingredients'>
-         材料
+          材料
        </div>
        <div class='datail-item'>
-         <%= @recipe.ingredients%>
-       </div> 
+         <%= @recipe.ingredients%>  
+         <div class='datail-quantity'>
+           <%=@recipe.quantity%>
+         </div>
+       </div>
+       <%# 調味料詳細 %> 
        <div class='datail-seasonings'>
-        【調味料】
-       </div> 
-       <div class='datail-item'>
+         【調味料】
+        </div> 
+         <div class='datail-item'>  
          <%= @recipe.seasonings%>
-       </div>
+         <div class='datail-quantity'>
+          <%=@recipe.quantity%>
+         </div> 
+       </div> 
+       <%# 作り方詳細 %>
        <div class='datail-steps'> 
          作り方
        </div>
        <div class='datail-item'>
          <%= @recipe.steps%> 
        </div> 
-     </div> 
-   </div>
- </div>    
-<%= link_to '戻る', recipes_path %>
-
+     </div>   
+    </div>
+  </div>  
+ </div>  
+<%= link_to '戻る', recipes_path, class: 'show-btn' %>
 

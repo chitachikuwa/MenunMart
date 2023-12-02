@@ -45,7 +45,7 @@ class RecipesController < ApplicationController
   #end
 
   def recipe_params
-    params.require(:recipe).permit(:image, :title, :category_id, :ingredients, :seasonings,:steps, :quantity).merge(admin_id: current_admin.id)  
+    params.require(:recipe).permit(:image, :title, :category_id, :ingredients, :seasonings, :steps, :quantity).merge(admin_id: current_admin.id)  
   end  
 
   def set_recipe

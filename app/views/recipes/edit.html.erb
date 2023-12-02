@@ -3,7 +3,7 @@
     <div class='recipe-new-title'>
       レシピを編集
     </div>   
-    <%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
+    <%= form_with model: @recipe, url: recipe_path(@recipe), local: true do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
     <div class='new-items'>
     <%# 料理画像 %>
@@ -47,13 +47,13 @@
    <%# 作り方 %>
      <div class="new-item">
        <div class="recipe-new-text" >作り方</div>
-         <%= f.text_field :steps, class: "steps-input" %>
+         <%= f.text_area :steps, class: "steps-input" %>
      </div>  
 
   <%# 作成ボタン %>
     <div class="actions">
       <%= f.submit "変更する" ,id:"submit-button", class:"recipe-button" %>
-      <%= link_to "戻る", recipes_path, class:'back-btn' %> 
+      <%= link_to "戻る", recipes_path(@recipe), class:'back-btn' %> 
     </div>
     <% end %>
     </div>
