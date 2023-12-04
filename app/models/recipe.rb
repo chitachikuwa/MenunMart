@@ -3,12 +3,14 @@ class Recipe < ApplicationRecord
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
+  has_many :recipe_ingredients, dependent: :destroy
+  accepts_nested_attributes_for :recipe_ingredients
+  has_many :recipe_seasonings, dependent: :destroy
+  accepts_nested_attributes_for :recipe_seasonings
+  has_many :recipe_steps, dependent: :destroy
+  accepts_nested_attributes_for :recipe_steps
   
-  serialize :ingredients, Array
-  serialize :seasonings, Array
-  serialize :quantity, Array
-  serialize :steps, Array
 
-  validates :image, :title, :ingredients, :seasonings, :steps, presence: true
+  validates :image, :title, presence: true
   validates :category_id, numericality: { other_than: 0 }
 end
