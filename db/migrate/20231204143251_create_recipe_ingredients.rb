@@ -1,6 +1,6 @@
-class CreateRecipesingredients < ActiveRecord::Migration[6.0]
+class CreateRecipeIngredients < ActiveRecord::Migration[6.0]
   def change
-    create_table :recipesingredients do |t|
+    create_table :recipe_ingredients do |t|
       t.references :recipe,         null: false
       t.integer    :ingredient_id,  null: false
       t.integer    :quantity,       null: false

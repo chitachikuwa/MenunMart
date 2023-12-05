@@ -28,9 +28,11 @@
      <div class="new-item">
        <div class="recipe-new-text">食材</div>
        <div class='new-group'> 
-       <%= f.text_field :ingredients, class: "ingredients-input" %>
+         <%= f.text_field :recipe_ingredients_id,  class: 'ingredients-input' %>
+         <%= link_to_remove_association "削除", f %>
        <div class='recipe-new-text'>分量</div>
        <%= f.text_field :quantity, class: "quantity-input" %>
+       <%= link_to_remove_association "削除", f %>
        </div> 
      </div>  
 
@@ -38,16 +40,20 @@
       <div class="new-item">
         <div class='recipe-new-text'>調味量 </div>
         <div class='new-group'>
-          <%= f.text_field :seasonings, class: "seasonings-input" %>
+          <%= f.text_field :recipe_seasonings_id, class: "seasonings-input" %>
+            <%= link_to_remove_association "削除", f %>
         <div class='recipe-new-text'>分量</div>
           <%= f.text_field :quantity, class: "quantity-input" %>
+            <%= link_to_remove_association "削除", f %>
        </div> 
      </div>  
    
    <%# 作り方 %>
      <div class="new-item">
        <div class="recipe-new-text" >作り方</div>
-         <%= f.text_field :steps, class: "steps-input" %>
+         <%= f.text_field :recipe_steps ,  class: "steps-input" %>
+           <%= render "recipes/recipe_step_fields", f: f %>
+         <%= link_to_add_association "追加", f , :recipe_steps %>
      </div>  
 
   <%# 作成ボタン %>
