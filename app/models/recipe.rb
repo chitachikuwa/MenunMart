@@ -3,12 +3,13 @@ class Recipe < ApplicationRecord
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
+
   has_many :recipe_ingredients, dependent: :destroy
-  accepts_nested_attributes_for :recipe_ingredients
+  accepts_nested_attributes_for :recipe_ingredients, reject_if: :all_blank, allow_destroy: true
   has_many :recipe_seasonings, dependent: :destroy
-  accepts_nested_attributes_for :recipe_seasonings
+  accepts_nested_attributes_for :recipe_seasonings, reject_if: :all_blank, allow_destroy: true
   has_many :recipe_steps, dependent: :destroy
-  accepts_nested_attributes_for :recipe_steps
+  accepts_nested_attributes_for :recipe_steps, reject_if: :all_blank, allow_destroy: true
   
 
   validates :image, :title, presence: true

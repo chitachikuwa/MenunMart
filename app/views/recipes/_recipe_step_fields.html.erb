@@ -1,4 +1,4 @@
-  <div class="new-group">
-     <%= f.collection_select(:step_id, {}, :id, :name, {}) %>
-    <%= link_to_remove_association "削除", f %>
+<div class="step-fields">
+  <%= f.text_field :name, class:'step-amount', id:'step-amount' %>
+  <%= link_to_remove_association '削除する', f, class:'new-add-btn' %>
 </div>

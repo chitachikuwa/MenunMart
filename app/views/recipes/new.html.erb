@@ -9,60 +9,95 @@
     <%# 料理画像 %>
       <div class='new-item'>
         <div class="recipe-new-text">料理画像 </div>
-          <%= f.file_field :image, id: "item-image" %>
+        <%= f.file_field :image, id: "item-image" %>
       </div>  
 
     <%# 料理名 %>
       <div class='new-item'>
         <div class="recipe-new-text">料理名</div>
-          <%= f.text_field :title, class:'title-input'%>
+        <%= f.text_field :title, class:'title-input'%>
       </div>
 
     <%# 料理カテゴリー %>
       <div class='new-item'>
         <div class="recipe-new-text">分類</div>
-          <%= f.collection_select :category_id, Category.all, :id, :name %>
+        <%= f.collection_select :category_id, Category.all, :id, :name %>
       </div>
       
     <%# 食材 %>
-     <div class="new-item">
-       <div class="recipe-new-text">食材</div>
-       <div class='new-group'> 
-         <%= f.text_field :recipe_ingredients_id,  class: 'ingredients-input' %>
-         <%= link_to_remove_association "削除", f %>
-       <div class='recipe-new-text'>分量</div>
-       <%= f.text_field :quantity, class: "quantity-input" %>
-       <%= link_to_remove_association "削除", f %>
-       </div> 
-     </div>  
-
-   <%# 調味料 %>
       <div class="new-item">
-        <div class='recipe-new-text'>調味量 </div>
-        <div class='new-group'>
-          <%= f.text_field :recipe_seasonings_id, class: "seasonings-input" %>
-            <%= link_to_remove_association "削除", f %>
-        <div class='recipe-new-text'>分量</div>
-          <%= f.text_field :quantity, class: "quantity-input" %>
-            <%= link_to_remove_association "削除", f %>
-       </div> 
-     </div>  
-   
-   <%# 作り方 %>
-     <div class="new-item">
-       <div class="recipe-new-text" >作り方</div>
-         <%= f.text_field :recipe_steps ,  class: "steps-input" %>
-           <%= render "recipes/recipe_step_fields", f: f %>
-         <%= link_to_add_association "追加", f , :recipe_steps %>
-     </div>  
+        <div class='recipe-text-box'>
+          <div class="recipe-new-text">食材</div>
+          <div class='new-add-btn'>
+          <%= link_to_add_association "追加する", f, :recipe_ingredients,
+          class: 'ingredient-fields',
+          id: 'ingredient-btn',
+          data:{
+          association_insertion_node: '#new-ingredient-field',
+          association_insertion_method: 'after'
+          }
+          %>  
+         </div>
+       </div>
+       <%= f.fields_for :recipe_ingredients do |form| %>
+         <%= render "recipes/recipe_ingredient_fields", f: f %>
+       <% end %>
+         <div id="new-ingredient-field"></div>
+      </div>
 
+    <%# 調味料 %>
+      <div class="new-item">
+        <div class='recipe-text-box'>
+          <div class='recipe-new-text'>調味量 </div>
+          <div class='new-add-btn'>
+          <%= link_to_add_association "追加する", f, :recipe_seasonings ,
+          class: 'seasonings-fields',
+          id: 'seasonings-btn',
+          data:{
+          association_insertion_node: '#new-seasoning-field',
+          association_insertion_method: 'after'
+          }
+          %>  
+          </div>
+        </div>
+        <%= f.fields_for :recipe_seasonings do |form| %>
+          <%= render "recipes/recipe_seasoning_fields", f: f %>
+        <% end %>
+        <div id="new-seasoning-field"></div>
+      </div>
+         
+     
+    <%# 作り方 %>
+      <div class="new-item">
+        <div class='recipe-text-box'>
+          <div class="recipe-new-text" >作り方</div>
+          <div class='new-add-btn'>
+          <%= link_to_add_association "追加する", f, :recipe_steps,
+          class: 'steps-fields',
+          id: 'step-btn',
+          data:{
+          association_insertion_node: '#nwe-step-fild',
+          association_insertion_method: 'after'
+          }
+          %>  
+         </div>
+       </div> 
+       <%= f.fields_for :recipe_steps do |form| %>
+         <%= render "recipes/recipe_step_fields", f: f %>
+        <% end %>
+        <div id="nwe-step-fild"></div>
+      </div>
+
+    
   <%# 作成ボタン %>
     <div class="actions">
-      <%= f.submit "作成する" ,id:"submit-button", class:"recipe-button" %>
-      <%= link_to "戻る", recipes_path, class:'back-btn' %> 
+      <%= f.submit "作成する" ,id:"submit-button", class:"new-btn" %>
+      <%= link_to "戻る", recipes_path, class:'new-btn' %> 
     </div>
     <% end %>
     </div>
   </div>
 </div>
+
+
  

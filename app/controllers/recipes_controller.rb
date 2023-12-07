@@ -8,9 +8,9 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @recipe_ingredients = @recipe.recipe_ingredients.build
-    @recipe_seasoninsgs = @recipe.recipe_seasonings.build
-    @recipe_steps = @recipe.recipe_steps.build
+    @recipe.recipe_ingredients.build
+    @recipe.recipe_seasonings.build
+    @recipe.recipe_steps.build
   end
 
   def create
@@ -50,9 +50,10 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(
       :image, :title, :category_id, 
-      recipe_ingredients_attributes: [:id, :ingredient_id, :quantity, :_destroy], 
-      recipe_seasonings_attributes: [:id, :seasoning_id, :quantity, :_destroy], 
-      recipe_ingredients_attributes: [:id, :step_id, :_destroy]).merge(admin_id: current_admin.id)  
+      recipe_ingredients_attributes: [:id, :recipe_id, :name, :quantity, :_destroy], 
+      recipe_seasonings_attributes: [:id, :name, :quantity, :_destroy], 
+      recipe_ingredients_attributes: [:id, :recipe_id, :name, :_destroy])
+      .merge(admin_id: current_admin.id)  
   end  
 
   def set_recipe
