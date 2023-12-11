@@ -51,8 +51,8 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(
       :image, :title, :category_id, 
       recipe_ingredients_attributes: [:id, :recipe_id, :name, :quantity, :_destroy], 
-      recipe_seasonings_attributes: [:id, :name, :quantity, :_destroy], 
-      recipe_ingredients_attributes: [:id, :recipe_id, :name, :_destroy])
+      recipe_seasonings_attributes: [:id, :recipe_id, :name, :quantity, :_destroy], 
+      recipe_steps_attributes: [:id, :recipe_id, :name, :_destroy])
       .merge(admin_id: current_admin.id)  
   end  
 

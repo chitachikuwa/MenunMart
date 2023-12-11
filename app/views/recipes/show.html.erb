@@ -21,9 +21,9 @@
           材料
        </div>
        <div class='datail-item'>
-         <%= @recipe.ingredients%>  
+         <%= ingredient.name %>  
          <div class='datail-quantity'>
-           <%=@recipe.quantity%>
+           <%= ingredient.quantity %>
          </div>
        </div>
        <%# 調味料詳細 %> 
@@ -31,7 +31,7 @@
          【調味料】
         </div> 
          <div class='datail-item'>  
-         <%= @recipe.seasonings%>
+         <%= @recipe.name%>
          <div class='datail-quantity'>
           <%=@recipe.quantity%>
          </div> 
@@ -41,7 +41,7 @@
          作り方
        </div>
        <div class='datail-item'>
-         <%= @recipe.steps%> 
+         <%= @recipe.name%> 
        </div> 
      </div>   
     </div>
@@ -49,3 +49,5 @@
  </div>  
 <%= link_to '戻る', recipes_path, class: 'show-btn' %>
 
+<%= link_to '戻る', recipes_path, class: 'show-btn' %>
+ 
