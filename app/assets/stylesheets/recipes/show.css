@@ -14,8 +14,8 @@
 }
 
 .recipe-box-img{
-  width: 60vw;
-  height: 50vh;
+  width: 55vw;
+  height: 48vh;
 }
 
 .datail-table{
@@ -47,7 +47,9 @@
 .datail-seasonings{
  font-size: 20px;
  margin-top: 10px;
+ font-weight: bold;
 }
+
 
 .datail-steps{
   font-size: 25px;

@@ -38,7 +38,7 @@
        <% if @recipe.recipe_seasonings.present? %>
          <% @recipe.recipe_seasonings.each do |seasoning| %>
          <div class='datail-item'>  
-           <%= seasoning.name %>
+           （A）<%= seasoning.name %>
            <div class='datail-quantity'>
              <%= seasoning.quantity %>
            </div> 
