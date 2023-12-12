@@ -1,23 +1,30 @@
 <div class='recipe-new'>
-  <div class='recipe-new-title'>
-    レシピ作成
-  </div>   
-  <%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
-  <%= render 'layouts/error_messages', model: f.object %>
-  <div class='new-items'>
+  <div class='recipe-contents'>
+    <div class='recipe-new-title'>
+      レシピを編集
+    </div>   
+    <%= form_with model: @recipe, url: recipe_path(@recipe), local: true do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class='new-items'>
     <%# 料理画像 %>
       <div class='new-item'>
         <div class="recipe-new-text">料理画像 </div>
-        <%= f.file_field :image, id: "item-image" %>
+          <%= f.file_field :image, id: "item-image" %>
       </div>  
 
     <%# 料理名 %>
       <div class='new-item'>
         <div class="recipe-new-text">料理名</div>
-        <%= f.text_field :title, class:'title-input'%>
+          <%= f.text_field :title, class:'title-input'%>
       </div>
 
     <%# 料理カテゴリー %>
+      <div class='new-item'>
+        <div class="recipe-new-text">分類</div>
+          <%= f.collection_select :category_id, Category.all, :id, :name %>
+      </div>
+      
+     <%# 料理カテゴリー %>
       <div class='new-item'>
         <div class="recipe-new-text">分類</div>
         <%= f.collection_select :category_id, Category.all, :id, :name, class: 'category-input' %>
@@ -85,7 +92,7 @@
     
     <%# 作成ボタン %>
       <div class="new-btn-contents">
-      <%= f.submit "作成する" , class:"new-btn" %>
+      <%= f.submit "変更する" , class:"new-btn" %>
       <%= link_to "戻る", recipes_path, class:'back-btn' %> 
       </div>
     <% end %>

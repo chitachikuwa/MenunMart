@@ -1,13 +1,12 @@
 .recipe-show{
   width: 100vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
 
 .recipe-box{
   width: 80vw;
-  min-width: 1200px;
   padding: 10vh 15vw;
   display: flex;
   flex-direction: column;
@@ -21,7 +20,6 @@
 
 .datail-table{
   width: 60vh;
-  text-align: left;
 }
 
 .datail-title{
@@ -30,11 +28,20 @@
   text-align: center;
 }
 
+.show-btn{
+  background-color: lightgrey;
+  border: 2px solid ;
+  font-size: 15px;
+  width: 10vw;
+  text-align: center;
+  margin: 10px;
+  text-align: right;
+}
+
 .datail-ingredients{
   font-size: 25px;
-  font-weight: 200;
-  text-align: center;
   margin: 20px 0 20px;
+  font-weight: bold;
 }
 
 .datail-seasonings{
@@ -45,13 +52,19 @@
 .datail-steps{
   font-size: 25px;
   font-weight: 200;
-  text-align: center;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 .datail-item{
   text-align: left;
-  margin: 10px 0 5px;
+  margin: 10px 0 20px;
   border-bottom: 1px dashed black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.datail-quantity{
+  text-align: right;
 
 }

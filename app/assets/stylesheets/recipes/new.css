@@ -1,0 +1,99 @@
+.recipe-new{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: lightyellow;
+}
+
+.recipe-new-title{
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.new-items{
+  width: 60vw;
+  background-color:white;
+  padding: 15px;
+}
+
+.recipe-new-text{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.category-input{
+  width: 100px;
+  height: 20px;
+}
+
+.new-item{
+  margin-bottom: 15px;
+}
+
+.title-input{
+  width: 80%;
+  border: none;
+  border-bottom: 1px dashed black;
+}
+
+.new-group{
+  display: flex;
+  align-items:baseline;
+}
+
+.seasonings-input,.ingredients-input{
+  width: 30%;
+  border: none;
+  border-bottom: 1px dashed black;
+  margin-bottom: 10px;
+}
+
+
+
+.quantity-input{
+  width: 15%;
+  border: none;
+  border-bottom: 1px dashed black;
+}
+
+
+.step-amount{
+  width: 70%;
+  height: 15px;
+  border: none;
+  border-bottom: 1px dashed black;
+  margin-bottom: 10px;
+}
+
+.recipe-text-box{
+  display: flex;
+}
+
+.new-add-btn,.steps-btn, .seasoning-btn,.ingredient-btn{
+  background-color: lightgrey;
+  border: 1px solid ;
+  font-size: 14px;
+  width: 65px;
+  text-align: center;
+  margin:0 30px 0 15px;
+}
+
+.new-btn-contents{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.new-btn,.back-btn{
+  background-color: lightgrey;
+  border: 2px solid ;
+  font-size: 15px;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  margin: 10px;
+}
+
