@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 2023_12_04_143338) do
 
   create_table "recipe_ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "recipe_id", null: false
-    t.integer "name", null: false
-    t.integer "quantity", null: false
+    t.string "name", null: false
+    t.string "quantity", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 2023_12_04_143338) do
 
   create_table "recipe_seasonings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "recipe_id", null: false
-    t.integer "name", null: false
-    t.integer "quantity", null: false
+    t.string "name", null: false
+    t.string "quantity", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_recipe_seasonings_on_recipe_id"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2023_12_04_143338) do
 
   create_table "recipe_steps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "recipe_id", null: false
-    t.integer "name", null: false
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_recipe_steps_on_recipe_id"

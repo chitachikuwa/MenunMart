@@ -4,50 +4,67 @@
  <div class='recipe-show'>
    <div class='recipe-contents'>
      <div class='recipe-box'> 
+
       <%# レシピ画像 %>
       <div class='recipe-img-content'>
         <%= image_tag @recipe.image, class:'recipe-box-img' %>
       </div>
       <div class='datail-table'>
+
        <%# 料理名 %>
        <div class='datail-title'>
          <%= @recipe.title %>
-         <%if admin_signed_in? %>
-           <%= link_to '編集する', edit_recipe_path, method: :get, class: 'show-btn' %>
-         <% end %>
        </div> 
+
        <%# 材料詳細 %>
-       <div class='datail-ingredients'>
+       <div class='show-item'>
+        <div class='datail-ingredients'>
           材料
-       </div>
-       <div class='datail-item'>
-         <%= ingredient.name %>  
-         <div class='datail-quantity'>
-           <%= ingredient.quantity %>
-         </div>
-       </div>
+        </div>
+        <% if @recipe.recipe_ingredients.present? %>
+          <% @recipe.recipe_ingredients.each do |ingredient| %>
+          <div class='datail-item'>
+            <%= ingredient.name %>  
+            <div class='datail-quantity'>
+              <%= ingredient.quantity %>
+            </div>
+          </div>
+         <% end %> 
+        <%end %> 
        <%# 調味料詳細 %> 
        <div class='datail-seasonings'>
          【調味料】
-        </div> 
-         <div class='datail-item'>  
-         <%= @recipe.name%>
-         <div class='datail-quantity'>
-          <%=@recipe.quantity%>
-         </div> 
        </div> 
+       <% if @recipe.recipe_seasonings.present? %>
+         <% @recipe.recipe_seasonings.each do |seasoning| %>
+         <div class='datail-item'>  
+           <%= seasoning.name %>
+           <div class='datail-quantity'>
+             <%= seasoning.quantity %>
+           </div> 
+         </div> 
+         <% end %> 
+       <% end %>
+
        <%# 作り方詳細 %>
        <div class='datail-steps'> 
          作り方
        </div>
-       <div class='datail-item'>
-         <%= @recipe.name%> 
-       </div> 
-     </div>   
+       <% if @recipe.recipe_steps.present? %>
+         <% @recipe.recipe_steps.each do |step| %>
+         <div class='datail-item'>
+           <%= step.name%> 
+         </div> 
+         <% end %> 
+       <% end %> 
     </div>
   </div>  
  </div>  
 <%= link_to '戻る', recipes_path, class: 'show-btn' %>
 
-<%= link_to '戻る', recipes_path, class: 'show-btn' %>
+<%if admin_signed_in? %>
+  <%= link_to '編集する', edit_recipe_path, method: :get, class: 'show-btn' %>
+<% end %>
+
+
  

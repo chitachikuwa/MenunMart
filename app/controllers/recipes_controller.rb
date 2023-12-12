@@ -19,6 +19,7 @@ class RecipesController < ApplicationController
       @recipe.admin_id = current_user.id
     end
     if @recipe.save
+     
       redirect_to root_path
     else
       render :new

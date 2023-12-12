@@ -40,9 +40,8 @@
 
 .datail-ingredients{
   font-size: 25px;
-  font-weight: 200;
-  text-align: center;
   margin: 20px 0 20px;
+  font-weight: bold;
 }
 
 .datail-seasonings{
@@ -53,8 +52,8 @@
 .datail-steps{
   font-size: 25px;
   font-weight: 200;
-  text-align: center;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 .datail-item{

@@ -24,39 +24,80 @@
           <%= f.collection_select :category_id, Category.all, :id, :name %>
       </div>
       
+     <%# 料理カテゴリー %>
+      <div class='new-item'>
+        <div class="recipe-new-text">分類</div>
+        <%= f.collection_select :category_id, Category.all, :id, :name, class: 'category-input' %>
+      </div>
+      
     <%# 食材 %>
-     <div class="new-item">
-       <div class="recipe-new-text">食材</div>
-       <div class='new-group'> 
-       <%= f.text_field :ingredients, class: "ingredients-input" %>
-       <div class='recipe-new-text'>分量</div>
-       <%= f.text_field :quantity, class: "quantity-input" %>
-       </div> 
-     </div>  
+      <div class="new-item">
+        <div class='recipe-text-box'>
+          <div class="recipe-new-text">食材</div>
+          <div class='new-ingredient-btn'>
+          <%= link_to_add_association "追加する", f, :recipe_ingredients,
+          class: 'ingredient-btn',
+          data:{
+          association_insertion_node: '#new-ingredient-field',
+          association_insertion_method: 'after'
+          }
+          %>  
+         </div>
+       </div>
+       <%= f.fields_for :recipe_ingredients do |form| %>
+         <%= render "recipes/recipe_ingredient_fields", f: f %>
+       <% end %>
+         <div id="new-ingredient-field"></div>
+      </div>
 
-   <%# 調味料 %>
-     <div class="new-item">
-        <div class='recipe-new-text'>調味量 </div>
-        <div class='new-group'>
-          <%= f.text_field :seasonings, class: "seasonings-input" %>
-        <div class='recipe-new-text'>分量</div>
-          <%= f.text_field :quantity, class: "quantity-input" %>
+    <%# 調味料 %>
+      <div class="new-item">
+        <div class='recipe-text-box'>
+          <div class='recipe-new-text'>調味量 </div>
+          <div class='new-seasoning-btn'>
+          <%= link_to_add_association "追加する", f, :recipe_seasonings ,
+          class: 'seasoning-btn',
+          data:{
+          association_insertion_node: '#new-seasoning-field',
+          association_insertion_method: 'after'
+          }
+          %>  
+          </div>
+        </div>
+        <%= f.fields_for :recipe_seasonings do |form| %>
+          <%= render "recipes/recipe_seasoning_fields", f: f %>
+        <% end %>
+        <div id="new-seasoning-field"></div>
+      </div>   
+     
+    <%# 作り方 %>
+      <div class="new-item">
+        <div class='recipe-text-box'>
+          <div class="recipe-new-text" >作り方</div>
+          <div class='new-step-btn'>
+          <%= link_to_add_association "追加する", f, :recipe_steps,
+          class: 'steps-btn',
+          data:{
+          association_insertion_node: '#nwe-step-fild',
+          association_insertion_method: 'after'
+          }
+          %>  
+         </div>
        </div> 
-     </div>  
-   
-   <%# 作り方 %>
-     <div class="new-item">
-       <div class="recipe-new-text" >作り方</div>
-         <%= f.text_area :steps, class: "steps-input" %>
-     </div>  
-
-  <%# 作成ボタン %>
-    <div class="actions">
-      <%= f.submit "変更する" ,id:"submit-button", class:"recipe-button" %>
-      <%= link_to "戻る", recipes_path(@recipe), class:'back-btn' %> 
-    </div>
+       <%= f.fields_for :recipe_steps do |form| %>
+         <%= render "recipes/recipe_step_fields", f: f %>
+        <% end %>
+        <div id="nwe-step-fild"></div>
+      </div>
+    
+    <%# 作成ボタン %>
+      <div class="new-btn-contents">
+      <%= f.submit "変更する" , class:"new-btn" %>
+      <%= link_to "戻る", recipes_path, class:'back-btn' %> 
+      </div>
     <% end %>
-    </div>
   </div>
 </div>
+
+
  
