@@ -39,7 +39,10 @@ class RecipesController < ApplicationController
     else
       render :edit
     end
-  end      
+  end   
+  
+  def destroy
+  end  
 
   private
   #def admin_scan
