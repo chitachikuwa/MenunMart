@@ -65,7 +65,6 @@
   <%if admin_signed_in? %>
   <div class='show-btn-contents'>
     <%= link_to '編集する', edit_recipe_path, method: :get, class: 'show-btn' %>
-    <%= link_to '削除する', recipes_path, method: :delete, class: 'destroy-btn'%>
   </div>
   <% end %>
   
