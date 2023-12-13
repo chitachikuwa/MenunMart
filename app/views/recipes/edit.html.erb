@@ -90,10 +90,11 @@
         <div id="nwe-step-fild"></div>
       </div>
     
-    <%# 作成ボタン %>
+    <%# 編集ボタン %>
       <div class="new-btn-contents">
-      <%= f.submit "変更する" , class:"new-btn" %>
-      <%= link_to "戻る", recipes_path, class:'back-btn' %> 
+        <%= f.submit "変更する" , class:"new-btn" %>
+        <%= link_to '削除する', recipe_path, method: :delete, class: 'destroy-btn'%>
+        <%= link_to "戻る", recipes_path, class:'back-btn' %> 
       </div>
     <% end %>
   </div>

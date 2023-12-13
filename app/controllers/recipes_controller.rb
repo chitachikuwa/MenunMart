@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   
   #before_action :admin_scan, only: [:edit]
-  before_action :set_recipe, only: [:show, :edit, :update]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
   def index
     @recipes = Recipe.all
   end
@@ -39,7 +39,12 @@ class RecipesController < ApplicationController
     else
       render :edit
     end
-  end      
+  end   
+  
+  def destroy
+    @recipe.destroy
+    redirect_to root_path
+  end  
 
   private
   #def admin_scan

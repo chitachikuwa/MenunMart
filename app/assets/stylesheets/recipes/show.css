@@ -28,14 +28,19 @@
   text-align: center;
 }
 
-.show-btn{
+.show-btn-contents{
+  width: 100%;
+  text-align: center;
+}
+
+.show-btn,.destroy-btn,.show-back-btn{
   background-color: lightgrey;
   border: 2px solid ;
   font-size: 15px;
-  width: 10vw;
+  width: 100px;
   text-align: center;
   margin: 10px;
-  text-align: right;
+  text-align: center;
 }
 
 .datail-ingredients{

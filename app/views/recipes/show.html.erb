@@ -60,11 +60,14 @@
     </div>
   </div>  
  </div>  
-<%= link_to '戻る', recipes_path, class: 'show-btn' %>
+<%= link_to '戻る', recipes_path, class: 'show-back-btn' %>
 
-<%if admin_signed_in? %>
-  <%= link_to '編集する', edit_recipe_path, method: :get, class: 'show-btn' %>
-<% end %>
+  <%if admin_signed_in? %>
+  <div class='show-btn-contents'>
+    <%= link_to '編集する', edit_recipe_path, method: :get, class: 'show-btn' %>
+  </div>
+  <% end %>
+  
 
 
  
