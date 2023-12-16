@@ -8,9 +8,9 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @recipe.recipe_ingredients.build
-    @recipe.recipe_seasonings.build
-    @recipe.recipe_steps.build
+    @recipe_ingredients = @recipe.recipe_ingredients.build
+    @recipe_seasonings = @recipe.recipe_seasonings.build
+    @recipe_steps = @recipe.recipe_steps.build
   end
 
   def create
@@ -19,7 +19,6 @@ class RecipesController < ApplicationController
       @recipe.admin_id = current_user.id
     end
     if @recipe.save
-     
       redirect_to root_path
     else
       render :new
@@ -56,9 +55,9 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(
       :image, :title, :category_id, 
-      recipe_ingredients_attributes: [:id, :recipe_id, :name, :quantity, :_destroy], 
-      recipe_seasonings_attributes: [:id, :recipe_id, :name, :quantity, :_destroy], 
-      recipe_steps_attributes: [:id, :recipe_id, :name, :_destroy])
+      recipe_ingredients_attributes: [:id, :name, :quantity, :_destroy], 
+      recipe_seasonings_attributes: [:id, :name, :quantity, :_destroy], 
+      recipe_steps_attributes: [:id, :name, :_destroy])
       .merge(admin_id: current_admin.id)  
   end  
 

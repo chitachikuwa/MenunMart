@@ -24,12 +24,6 @@
           <%= f.collection_select :category_id, Category.all, :id, :name %>
       </div>
       
-     <%# 料理カテゴリー %>
-      <div class='new-item'>
-        <div class="recipe-new-text">分類</div>
-        <%= f.collection_select :category_id, Category.all, :id, :name, class: 'category-input' %>
-      </div>
-      
     <%# 食材 %>
       <div class="new-item">
         <div class='recipe-text-box'>

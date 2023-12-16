@@ -67,4 +67,5 @@ gem 'active_hash'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2bun'
 gem 'cocoon'
+gem "jquery-rails"
 gem 'pry-rails'

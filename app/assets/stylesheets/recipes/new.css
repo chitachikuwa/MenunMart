@@ -24,6 +24,12 @@
   font-weight: bold;
 }
 
+.quantity-text{
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
 .category-input{
   width: 100px;
   height: 20px;

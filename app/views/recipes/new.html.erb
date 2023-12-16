@@ -33,14 +33,13 @@
           data:{
           association_insertion_node: '#new-ingredient-field',
           association_insertion_method: 'after'
-          }
-          %>  
+          }%>  
          </div>
        </div>
        <%= f.fields_for :recipe_ingredients do |form| %>
-         <%= render "recipes/recipe_ingredient_fields", f: f %>
+         <%= render "recipes/recipe_ingredient_fields", f: form %>
        <% end %>
-         <div id="new-ingredient-field"></div>
+       <div  id='new-ingredient-field'></div>
       </div>
 
     <%# 調味料 %>
@@ -58,30 +57,29 @@
           </div>
         </div>
         <%= f.fields_for :recipe_seasonings do |form| %>
-          <%= render "recipes/recipe_seasoning_fields", f: f %>
+          <%= render "recipes/recipe_seasoning_fields", f: form %>
         <% end %>
         <div id="new-seasoning-field"></div>
       </div>   
      
     <%# 作り方 %>
       <div class="new-item">
-        <div class='recipe-text-box'>
-          <div class="recipe-new-text" >作り方</div>
-          <div class='new-step-btn'>
+        <div class="recipe-new-text" >作り方</div>
+        <div class='steps'> 
+          <%= f.fields_for :recipe_steps do |form| %>
+            <%= render "recipes/recipe_step_fields", f: form %>
+          <% end %>
+        </div>  
+        <div id='nwe-step-fild'></div>
+        <div class='new-step-btn'>
           <%= link_to_add_association "追加する", f, :recipe_steps,
           class: 'steps-btn',
           data:{
           association_insertion_node: '#nwe-step-fild',
           association_insertion_method: 'after'
-          }
-          %>  
+          }%>  
          </div>
-       </div> 
-       <%= f.fields_for :recipe_steps do |form| %>
-         <%= render "recipes/recipe_step_fields", f: f %>
-        <% end %>
-        <div id="nwe-step-fild"></div>
-      </div>
+        </div> 
     
     <%# 作成ボタン %>
       <div class="new-btn-contents">
