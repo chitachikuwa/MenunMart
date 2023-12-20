@@ -69,3 +69,4 @@ gem 'image_processing', '~> 1.2bun'
 gem 'cocoon'
 gem "jquery-rails"
 gem 'pry-rails'
+gem 'simple_calendar', '~> 2.0'
