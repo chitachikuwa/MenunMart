@@ -1,9 +1,11 @@
-<div class='ingredient-fields'>
-  <div class='new-group'> 
-  <%= f.text_field :name, class: "ingredients-input" %>
-    <div class='quantity-text'>分量</div>
-    <%= f.text_field :quantity, class: "quantity-input" %>
-    <%= link_to_remove_association "削除する", f, class:'new-add-btn'%>
+<div class="nested-fields">
+  <div class='ingredient-fields'>
+    <div class='new-group'> 
+    <%= f.text_field :name, class: "ingredients-input" %>
+      <div class='quantity-text'>分量</div>
+      <%= f.text_field :quantity, class: "quantity-input" %>
+      <%= link_to_remove_association "削除する", f, class:'new-add-btn'%>
+    </div>
   </div>
 </div>   
 
