@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions'
    }
   root 'recipes#index'
-  resources :recipes
+  resources :recipes do
+    resources :menus, only: [:index]
+  end  
 end
