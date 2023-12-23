@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'menus/index'
   devise_for :users
   devise_for :admins, controller: {
     sessions: 'admins/sessions'
