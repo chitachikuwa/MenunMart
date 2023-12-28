@@ -7,7 +7,8 @@ class Recipe < ApplicationRecord
   has_many :recipe_ingredients, dependent: :destroy
   has_many :recipe_seasonings, dependent: :destroy
   has_many :recipe_steps, dependent: :destroy
-  has_many :menus
+  has_many :room_users
+  has_many :menus, through: :recipe_menu
 
   accepts_nested_attributes_for :recipe_ingredients,
                                 :recipe_seasonings,
