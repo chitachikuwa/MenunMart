@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_04_143338) do
+ActiveRecord::Schema.define(version: 2023_12_23_222516) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 2023_12_04_143338) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "main"
+    t.string "sub_1"
+    t.string "sub_2"
+    t.string "soup"
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_menus_on_user_id"
   end
 
   create_table "recipe_ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -98,6 +110,7 @@ ActiveRecord::Schema.define(version: 2023_12_04_143338) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "menus", "users"
   add_foreign_key "recipe_ingredients", "recipes"
   add_foreign_key "recipe_seasonings", "recipes"
   add_foreign_key "recipe_steps", "recipes"
