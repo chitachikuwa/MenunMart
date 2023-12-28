@@ -1,3 +1,20 @@
-<%= month_calendar do |date| %>
-  <%= date.day %>
+<%= render "shared/header" %>
+
+<div class='manu-main'>
+  <div class='manu-resipe'>
+    <div class='maums'></div>
+  </div>  
+
+  <div class='calender-text'>
+    献立カレンダー
+  </div>
+  
+  <div class='calender'> 
+   <%= month_calendar events: @menus do |date,all| %>
+   <%= date.day %>
+   
 <% end %>
+
+
+
+<%= render  "shared/footer" %>

@@ -1,0 +1,2 @@
+class RecipeMenu < ApplicationRecord
+end
