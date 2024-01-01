@@ -1,13 +1,12 @@
 <%= render "shared/header" %>
 
-<div class='manu-main'>
-  <div class='calender-manu'>
-  </div>  
-
-   
+<div class='manu-main'>  
   <div class='calender-text'>
     献立カレンダー
   </div>
+  <div class='manu-text'>
+    献立を作成したい日付をクリックしてください
+  </div>  
   
   <div class='calender'> 
    <%= month_calendar events: @menus do |date,all| %>
@@ -17,6 +16,8 @@
   <%end%> 
 <% end %>
 <% end %>
+</div>
+</div>
 
 
 
