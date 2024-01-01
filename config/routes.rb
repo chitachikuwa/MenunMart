@@ -6,6 +6,6 @@ Rails.application.routes.draw do
    }
   root 'recipes#index'
   resources :recipes do
-    resources :menus, only: [:index]
+    resources :menus, only: [:index, :nwe, :create]
   end  
 end
