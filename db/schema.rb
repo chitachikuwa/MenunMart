@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_04_143338) do
+ActiveRecord::Schema.define(version: 2023_12_24_060022) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(version: 2023_12_04_143338) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "main"
+    t.string "sub_1"
+    t.string "sub_2"
+    t.string "soup"
+    t.date "date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_menus_on_user_id"
+  end
+
   create_table "recipe_ingredients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "recipe_id", null: false
     t.string "name", null: false
@@ -52,6 +64,15 @@ ActiveRecord::Schema.define(version: 2023_12_04_143338) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
+  end
+
+  create_table "recipe_menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "recipe_id", null: false
+    t.bigint "menu_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id"], name: "index_recipe_menus_on_menu_id"
+    t.index ["recipe_id"], name: "index_recipe_menus_on_recipe_id"
   end
 
   create_table "recipe_seasonings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -98,7 +119,10 @@ ActiveRecord::Schema.define(version: 2023_12_04_143338) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "menus", "users"
   add_foreign_key "recipe_ingredients", "recipes"
+  add_foreign_key "recipe_menus", "menus"
+  add_foreign_key "recipe_menus", "recipes"
   add_foreign_key "recipe_seasonings", "recipes"
   add_foreign_key "recipe_steps", "recipes"
   add_foreign_key "recipes", "admins"

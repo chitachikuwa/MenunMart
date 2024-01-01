@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+
+<div class='manu-main'>
+  <div class='calender-manu'>
+    <%#= link_to '献立を立てる', new_menu_path,% class:'menu-btn' %>
+  </div>  
+
+   
+  <div class='calender-text'>
+    献立カレンダー
+  </div>
+  
+  <div class='calender'> 
+   <%= month_calendar events: @menus do |date,all| %>
+   <%= date.day %>
+   <%= all.each do |menu| %>
+  <%end%> 
+<% end %>
+
+
+
+<%= render  "shared/footer" %>
