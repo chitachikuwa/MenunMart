@@ -2,7 +2,6 @@
 
 <div class='manu-main'>
   <div class='calender-manu'>
-    <%#= link_to '献立を立てる', new_menu_path,% class:'menu-btn' %>
   </div>  
 
    
@@ -12,9 +11,11 @@
   
   <div class='calender'> 
    <%= month_calendar events: @menus do |date,all| %>
+     <%= link_to new_menu_for_date_path(date), class: 'crender-date-menu' do %>
    <%= date.day %>
    <%= all.each do |menu| %>
   <%end%> 
+<% end %>
 <% end %>
 
 

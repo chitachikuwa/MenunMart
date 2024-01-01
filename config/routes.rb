@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions'
    }
   root 'recipes#index'
-  resources :recipes do
-    resources :menus, only: [:index, :nwe, :create]
-  end  
+  resources :recipes 
+  resources :menus, only: [:index, :new, :create]
+  get '/carender/:date', to: 'menus#new', as: :new_menu_for_date
 end
