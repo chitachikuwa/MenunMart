@@ -5,6 +5,14 @@
 
  <div class='menu-new-calender'>
    <div class='menu-new-date'>
-     <%= "#{@selected_date.strftime('%m月%d日')}(#{@selected_date.strftime('%a')})分の献立を作成"%> 
-    </div>
- </div>    
+     <%= "#{@selected_date.strftime('%m月%d日')}分の献立を作成"%> 
+   </div>
+   <div class='new-menus'>
+     <%= form_tag(new_menu_for_date_path(@selected_date), method: :get, class: 'menu-form') do %>
+     <%= select_tag(:category_id, options_for_select(Category.all.map { |c| [c.name, c.id] }), prompt: 'カテゴリーを選択') %>
+     <%= text_field_tag(:search_term, params[:search_term], placeholder: 'レシピ名または材料で検索') %>
+     <%= submit_tag '検索' %>
+    <% end %>
+    <%#@recipes.each do |recipe| %>
+    <%#end%>
+  </div>    
