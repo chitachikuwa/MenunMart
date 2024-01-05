@@ -1,0 +1,1 @@
+Recipe.where("title LIKE ? OR ingredients LIKE ?", "%鯛%", "%鯛%")

@@ -58,7 +58,14 @@
          <% end %> 
        <% end %> 
     </div>
-  </div>  
+  </div> 
+  <div class='recipe-carender-form'>
+    <%= form_tag new_menu_path, remote: true, method: :get, class: 'recipe-calender' do%>
+      <%= hidden_field_tag :recipe_id, @recipe.id %>
+      <%= select_date(Date.today, prefix: 'date', order: [:year, :month, :day], class: 'recipe-menu-btn') %>
+      <%= submit_tag '献立を登録する', class: 'recipe-date-btn' %>
+    <% end %>
+  </div>
  </div>  
 <%= link_to '戻る', recipes_path, class: 'show-back-btn' %>
 
