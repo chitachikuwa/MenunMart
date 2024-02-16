@@ -1,12 +1,11 @@
 class MenusController < ApplicationController
   def index
     @menus = Menu.all
-    @recipe = Recipe.find(params[:recipe_id])
+    @recipes = Recipe.all
   end
 
   def new
-   
-    @selected_date = params[:date] || Date.today
+    @selected_date = params[:date].present? ? Date.parse(params[:date]) : Date.today
     @day_of_week = @selected_date.strftime('%A')
     @menu = Menu.new
     search_term = params[:recipe_search_term]
